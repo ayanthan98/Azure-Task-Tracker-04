@@ -1,0 +1,19 @@
+
+FROM node:22-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Copy application source
+COPY . .
+
+# Backend port
+ENV PORT=5000
+
+EXPOSE 5000
+
+CMD ["npm", "start"]
+

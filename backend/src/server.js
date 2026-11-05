@@ -121,6 +121,11 @@ app.delete("/api/tasks/:id", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
+
+app.listen(port, "0.0.0.0", () => {
   console.log(`Task Tracker API listening on port ${port}`);
 });
+
+// Here added 0.0.0.0 by me
+
+
